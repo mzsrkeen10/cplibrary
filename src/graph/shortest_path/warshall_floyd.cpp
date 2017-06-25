@@ -1,4 +1,14 @@
-#define MAX_E 10000
+/*
+    全点対最短経路(Warshall-Floyd法)
+    時間計算量 O(|V|^3)
+
+    MAX_V : 頂点数の最大値
+
+    Usage:
+        d[MAX_V][MAX_V]にコストの初期値を格納
+        Vに頂点数を格納
+*/
+
 #define MAX_V 10000
 #define INF 1e9
 
