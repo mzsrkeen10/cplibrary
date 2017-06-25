@@ -3,7 +3,6 @@
     時間計算量 O(|E|log|V|)
 
     MAX_E : 辺数の最大値
-    MAX_V : 頂点数の最大値
     MAX_N : Union-Find木の配列の要素数
 
     Usage:
@@ -17,7 +16,6 @@
 #include <algorithm>
 
 #define MAX_E 10000
-#define MAX_V 10000
 #define MAX_N 10000
 #define INF 1e9
 
