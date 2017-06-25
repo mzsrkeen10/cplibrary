@@ -1,7 +1,18 @@
+/*
+    単一始点最短経路(dijkstra法)
+    時間計算量 O(|E|log|V|)
+
+    MAX_V : 頂点数の最大値
+
+    Usage:
+        s : 始点
+        Vに頂点数を格納
+        vector<edge> G[MAX_V]に各頂点からの辺を格納
+        最短経路はd[MAX_V]に格納される
+*/
 #include <algorithm>
 #include <queue>
 
-#define MAX_E 10000
 #define MAX_V 10000
 #define INF 1e9
 
@@ -16,7 +27,7 @@ int d[MAX_V];
 
 void dijkstra(int s) {
   // greater<P>を指定することでfirstが小さい順に取り出せるようにする
-  std::priority_queue<P, vector<P>, greater<P>> que;
+  std::priority_queue<P, std::vector<P>, std::greater<P>> que;
   std::fill(d, d + V, INF);
   d[s] = 0;
   que.push(P(0, s));
