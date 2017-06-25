@@ -1,3 +1,18 @@
+/*
+    単一始点最短経路(Bellman-Ford法)
+    時間計算量 O(|V||E|)
+
+    MAX_E : 辺数の最大値
+    MAX_V : 頂点数の最大値
+
+    Usage:
+        s : 始点
+        edge es[MAX_E]に辺を格納
+        V, Eに頂点数, 辺数を格納
+        最短経路はd[MAX_V]に格納される
+        find_negative_loop()で負閉路を検出可
+*/
+
 #include <cstring>
 
 #define MAX_E 10000
