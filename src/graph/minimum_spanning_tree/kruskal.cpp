@@ -27,13 +27,13 @@ struct edge {
 };
 
 int par[MAX_N];  // 親
-int rank[MAX_N]; // 木の深さ
+int depth[MAX_N]; // 木の深さ
 
 // n要素で初期化
 void init(int n) {
   for (int i = 0; i < n; i++) {
     par[i] = i;
-    rank[i] = 0;
+    depth[i] = 0;
   }
 }
 
@@ -53,12 +53,12 @@ void unite(int x, int y) {
   if (x == y)
     return;
 
-  if (rank[x] < rank[y]) {
+  if (depth[x] < depth[y]) {
     par[x] = y;
   } else {
     par[y] = x;
-    if (rank[x] == rank[y])
-      rank[x]++;
+    if (depth[x] == depth[y])
+      depth[x]++;
   }
 }
 
