@@ -1,3 +1,19 @@
+/*
+    最小全域木(kruskal法)
+    時間計算量 O(|E|log|V|)
+
+    MAX_E : 辺数の最大値
+    MAX_V : 頂点数の最大値
+    MAX_N : Union-Find木の配列の要素数
+
+    Usage:
+        edge es[MAX_E]に辺を格納
+        V,Eに頂点数,辺数を格納
+
+        非連結なグラフに適用した場合,
+        「各連結成分における最小全域木」の集合を求められる
+*/
+
 #include <algorithm>
 
 #define MAX_E 10000
@@ -5,6 +21,7 @@
 #define MAX_N 10000
 #define INF 1e9
 
+// u,v : 始点と終点
 struct edge {
   int u, v, cost;
 };
