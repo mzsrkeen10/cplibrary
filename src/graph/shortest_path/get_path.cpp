@@ -1,3 +1,9 @@
+/*
+    経路復元(dijkstra)
+    時間計算量 O(|V|^2)
+    要改善
+*/
+
 #include <algorithm>
 #include <vector>
 
