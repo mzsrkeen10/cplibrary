@@ -7,5 +7,6 @@ root/
   ├README.md              # これ
   └src/
       ├graph/             # グラフ
-      └tree/              # 木構造
+      ├tree/              # 木構造
+      └numerical_calculation # 数値計算
 ```
