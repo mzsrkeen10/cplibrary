@@ -6,5 +6,7 @@ src/
   ├tree/                      # 木に関するアルゴリズム/データ構造
   ├numerical_calculation/     # 数値計算のアルゴリズム
   │  └simultaneous_equation/    # 連立方程式
-  └number_theory/             # 整数問題のアルゴリズム
+  ├number_theory/             # 整数問題のアルゴリズム
+  └geometry/                  # 計算幾何のアルゴリズム
+     └triangle/                 # 三角形
 ```
