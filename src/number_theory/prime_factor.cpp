@@ -8,9 +8,9 @@
 
 #include <map>
 
-str::map<int, int> prime_factor(int n) {
-  std::map<int, int> res;
-  for (int i = 2; i * i <= n; i++) {
+str::map<long long int, long long int> prime_factor(long long int n) {
+  std::map<long long int, long long int> res;
+  for (long long int i = 2; i * i <= n; i++) {
     while (n % i == 0) {
       res[i]++;
       n /= i;
