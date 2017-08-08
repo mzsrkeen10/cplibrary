@@ -9,11 +9,15 @@
 
 #define EPS 1.0e-9
 
-bool is_in_a_triangle(double ax, double ay, double bx, double by, double cx, double cy, double px, double py){
-    double c1 = (bx-ax) * (py-ay) - (by-ay) * (px-ax);
-    double c2 = (cx-bx) * (py-by) - (cy-by) * (px-bx);
-    double c3 = (ax-cx) * (py-cy) - (ay-cy) * (px-cx);
-    if(c1 + EPS > 0 && c2 + EPS > 0 && c3 + EPS > 0) return true;
-    else if(c1 + EPS < 0 && c2 + EPS < 0 && c3 + EPS < 0) return true;
-    else return false;
+bool is_in_a_triangle(double ax, double ay, double bx, double by, double cx,
+                      double cy, double px, double py) {
+  double c1 = (bx - ax) * (py - ay) - (by - ay) * (px - ax);
+  double c2 = (cx - bx) * (py - by) - (cy - by) * (px - bx);
+  double c3 = (ax - cx) * (py - cy) - (ay - cy) * (px - cx);
+  if (c1 + EPS > 0 && c2 + EPS > 0 && c3 + EPS > 0)
+    return true;
+  else if (c1 + EPS < 0 && c2 + EPS < 0 && c3 + EPS < 0)
+    return true;
+  else
+    return false;
 }
