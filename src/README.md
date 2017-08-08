@@ -5,7 +5,8 @@ src/
   │  └minimum_spanning_tree/     # 最小全域木
   ├tree/                      # 木に関するアルゴリズム/データ構造
   ├numerical_calculation/     # 数値計算のアルゴリズム
-  │  └simultaneous_equation/    # 連立方程式
+  │  ├simultaneous_equation/    # 連立方程式
+  │  └differential_and_integral # 数値微積分
   ├number_theory/             # 整数問題のアルゴリズム
   └geometry/                  # 計算幾何のアルゴリズム
      └triangle/                 # 三角形
