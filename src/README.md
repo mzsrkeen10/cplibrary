@@ -9,5 +9,6 @@ src/
   │  └differential_and_integral # 数値微積分
   ├number_theory/             # 整数問題のアルゴリズム
   └geometry/                  # 計算幾何のアルゴリズム
-     └triangle/                 # 三角形
+     ├triangle/                 # 三角形
+     └line/                     # 直線
 ```
