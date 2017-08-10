@@ -10,5 +10,6 @@ src/
   ├number_theory/             # 整数問題のアルゴリズム
   └geometry/                  # 計算幾何のアルゴリズム
      ├triangle/                 # 三角形
-     └line/                     # 直線
+     ├line/                     # 直線
+     └circle/                   # 円
 ```
