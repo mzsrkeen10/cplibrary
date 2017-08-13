@@ -8,5 +8,5 @@ long long int gcd(long long int m, long long int n) {
 }
 
 long long int lcm(long long int m, long long int n) {
-  return m * n / gcd(m, n);
+  return m / gcd(m, n) * n ;
 }
