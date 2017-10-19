@@ -1,7 +1,20 @@
+/*
+    最大流/最小カット(Ford-Fulkerson法)
+    時間計算量 O(F|E|)
+
+    MAX_V : 頂点数の最大値
+
+    Usage:
+        add_edge()関数でグラフを構成し,
+        max_flow()関数を呼び出す.
+        sはソース,tはシンク
+*/
+
 #include <cstring>
 #include <vector>
 
 #define MAX_V 10000
+#define INF 1e9
 
 // 辺を表す構造体 (行き先, 容量, 逆辺)
 struct edge {
