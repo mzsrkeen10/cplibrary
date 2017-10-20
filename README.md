@@ -4,6 +4,7 @@
 root/
   ├.editorconfig          # エディタの設定
   ├.gitignore             # gitの設定
+  ├.clang-format          # clang-formatの設定
   ├README.md              # これ
   └src/
       ├graph/             # グラフ
