@@ -10,6 +10,6 @@
 
 bool is_parallel(double ax, double ay, double bx, double by, double cx,
                  double cy, double dx, double dy) {
-  double cp = (bx - ax) * (dy - cy) - (by - ay) * (dx - cx);
-  return fabs(cp) < EPS;
+    double cp = (bx - ax) * (dy - cy) - (by - ay) * (dx - cx);
+    return fabs(cp) < EPS;
 }

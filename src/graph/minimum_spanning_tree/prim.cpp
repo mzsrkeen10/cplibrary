@@ -23,23 +23,23 @@ bool used[MAX_V]; // 頂点iがXに含まれているか
 int V;
 
 int prim() {
-  for (int i = 0; i < V; ++i) {
-    used[i] = false;
-  }
-  std::priority_queue<pii, vector<pii>, greater<pii> > que;
-  que.push(pii(0, 0));
-  int res = 0;
+    for (int i = 0; i < V; ++i) {
+        used[i] = false;
+    }
+    std::priority_queue<pii, vector<pii>, greater<pii>> que;
+    que.push(pii(0, 0));
+    int res = 0;
 
-  while (!que.empty()) {
-    int cst = que.top().first, v = que.top().second;
-    que.pop();
-    if (used[v])
-      continue;
-    used[v] = true;
-    res += cst;
-    for (int u = 0; u < V; u++)
-      que.push(pii(cost[v][u], u));
-  }
+    while (!que.empty()) {
+        int cst = que.top().first, v = que.top().second;
+        que.pop();
+        if (used[v])
+            continue;
+        used[v] = true;
+        res += cst;
+        for (int u = 0; u < V; u++)
+            que.push(pii(cost[v][u], u));
+    }
 
-  return res;
+    return res;
 }

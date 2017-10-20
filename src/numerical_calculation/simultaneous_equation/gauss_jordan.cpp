@@ -13,22 +13,22 @@
 
 #include <vector>
 
-std::vector<std::vector<double> > A;
+std::vector<std::vector<double>> A;
 std::vector<double> B;
 
 void gauss_jordan() {
-  for (int i = 0; i < A.size(); i++) {
-    B[i] /= A[i][i];
-    double aii = A[i][i];
-    for (int j = i; j < A.size(); j++)
-      A[i][j] /= aii;
-    for (int j = 0; j < A.size(); j++) {
-      if (j == i)
-        continue;
-      B[j] -= A[j][i] * B[i];
-      double aji = A[j][i];
-      for (int k = i; k < A.size(); k++)
-        A[j][k] -= aji * A[i][k];
+    for (int i = 0; i < A.size(); i++) {
+        B[i] /= A[i][i];
+        double aii = A[i][i];
+        for (int j = i; j < A.size(); j++)
+            A[i][j] /= aii;
+        for (int j = 0; j < A.size(); j++) {
+            if (j == i)
+                continue;
+            B[j] -= A[j][i] * B[i];
+            double aji = A[j][i];
+            for (int k = i; k < A.size(); k++)
+                A[j][k] -= aji * A[i][k];
+        }
     }
-  }
 }

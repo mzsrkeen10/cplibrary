@@ -9,9 +9,9 @@
 */
 
 double rectangle_method(double a, double b, int n) {
-  double acc = 0, d = (b - a) / n;
-  for (int i = 0; i < n; i++) {
-    acc += func(a + i * d) * d;
-  }
-  return acc;
+    double acc = 0, d = (b - a) / n;
+    for (int i = 0; i < n; i++) {
+        acc += func(a + i * d) * d;
+    }
+    return acc;
 }
