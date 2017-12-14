@@ -5,6 +5,9 @@
     Usage:
         引数に三角形の頂点の座標と判定したい点の座標を与える
         点及び辺上は外部として判定される
+
+    Verified:
+        AOJ0012 A Point in a Triangle
 */
 
 #define EPS 1.0e-9

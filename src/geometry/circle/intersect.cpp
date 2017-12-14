@@ -5,6 +5,9 @@
     Usage:
         二つの円の座標・半径を引数に与える
 
+    Verified:
+        AOJ0023 Circles Intersection
+
     *** 要改善 ***
     誤差を考慮していない
 */

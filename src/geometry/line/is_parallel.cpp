@@ -4,6 +4,9 @@
 
     Usage:
         4点の座標を引数に与える
+
+    Verified:
+        AOJ0021 Parallelism
 */
 
 #define EPS 1.0e-10
