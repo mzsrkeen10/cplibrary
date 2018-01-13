@@ -5,6 +5,8 @@
     集合の併合と所属判定を高速に行うことが可能
 */
 
+#include <vector>
+
 class UnionFindTree {
   private:
     std::vector<int> par;   // 親
