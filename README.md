@@ -8,7 +8,7 @@ root/
   ├README.md              # これ
   └src/
       ├graph/             # グラフ
-      ├tree/              # 木構造
+      ├data_structure/        # データ構造
       ├numerical_calculation/ # 数値計算
       ├number_theory/     # 整数問題
       └geometry/          # 計算幾何
