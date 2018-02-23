@@ -13,6 +13,7 @@
 #include <deque>
 #include <utility>
 
+// 単調性がある場合
 class ConvexHullTrick {
     using ll = long long int;
     using Line = std::pair<ll, ll>;
@@ -32,6 +33,52 @@ class ConvexHullTrick {
                check(lines[lines.size() - 2], lines.back(), line))
             lines.pop_back();
         lines.push_back(line);
+    }
+
+    ll f(ll i, ll x) { return lines[i].first * x + lines[i].second; }
+
+    ll get(ll x) {
+        assert(lines.size());
+        while (lines.size() >= 2 && f(0, x) >= f(1, x)) {
+            lines.pop_front();
+        }
+        return f(0, x);
+    }
+};
+
+// 単調性が無い場合
+class ConvexHullTrick{
+    using ll = long long int;
+
+    struct Line {
+        ll slope, intercept, left;
+    };
+
+    struct CompareBySlope {
+        bool operator() (const Line &lhs, const Line &rhs) {
+            return lhs.slope < rhs.slope;
+        }
+    };
+
+    struct CompareByLeft {
+        bool operator() (const Line &lhs, const Line &rhs) {
+            return lehs.left < rhs.left;
+        }
+    };
+
+private:
+    std::set<Line, CompareBySlope> lines_s;
+    std::set<Line, CompareByLeft> lines_l;
+
+public:
+    bool check(Line a, Line b, Line c) {
+        return (c.intercept - b.intercept) * (b.slope - a.slope) >=
+               (b.intercept - a.intercept) * (c.slope - b.slope);
+    }
+
+    void add(ll a, ll b) {
+        Line line = (Line){a, b, 0};
+        auto it = 
     }
 
     ll f(ll i, ll x) { return lines[i].first * x + lines[i].second; }
