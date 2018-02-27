@@ -4,6 +4,9 @@
 
     Usage:
         引数に3点の座標と外心の座標受け取る変数を与える
+
+    Verified:
+        AOJ0010 Circumscribed Circle of a Triangle
 */
 
 void circumcenter(double x1, double y1, double x2, double y2, double x3,

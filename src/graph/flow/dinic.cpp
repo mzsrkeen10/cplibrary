@@ -8,6 +8,9 @@
         add_edge()関数でグラフを構成し,
         max_flow()関数を呼び出す.
         sはソース,tはシンク
+
+    Verified:
+        AOJ GRL_6_A Maximum Flow
 */
 
 #include <cstring>
@@ -20,12 +23,11 @@
 // 辺を表す構造体 (行き先, 容量, 逆辺)
 struct edge {
     int to, cap, rev;
-}
+};
 
-std::vector<edge>
-    G[MAX_V];     // グラフの隣接リスト表現
-int level[MAX_V]; // sからの距離
-int iter[MAX_V];  // どこまで調べ終わったか
+std::vector<edge> G[MAX_V]; // グラフの隣接リスト表現
+int level[MAX_V];           // sからの距離
+int iter[MAX_V];            // どこまで調べ終わったか
 
 // fromからtoへ向かう容量capの辺をグラフに追加する
 void add_edge(int from, int to, int cap) {

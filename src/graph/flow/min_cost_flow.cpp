@@ -8,6 +8,9 @@
         add_edge()関数でグラフを構成し,
         min_cost_flow()関数を呼び出す.
         sはソース,tはシンク,fは流量
+
+    Verified:
+        AOJ GRL_6_B Minimum Cost Flow
 */
 
 #include <algorithm>
@@ -45,7 +48,7 @@ int min_cost_flow(int s, int t, int f) {
     std::fill(h, h + V, 0); // hを初期化
     while (f > 0) {
         // ダイクストラ法を用いてhを更新する
-        std::priority_queue<P, std::vector<P>, std::greater<P>> que;
+        std::priority_queue<P, std::vector<P>, std::greater<P> > que;
         std::fill(dist, dist + V, INF);
         dist[s] = 0;
         que.push(P(0, s));
