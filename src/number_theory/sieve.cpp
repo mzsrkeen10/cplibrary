@@ -21,6 +21,7 @@ long long int sieve(long long int n) {
     for (long long int i = 0; i <= n; i++)
         is_prime[i] = true;
     is_prime[0] = false;
+    is_prime[1] = false;
     for (long long int i = 2; i <= n; i++) {
         if (is_prime[i]) {
             prime[p++] = i;
