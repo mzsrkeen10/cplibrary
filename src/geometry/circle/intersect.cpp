@@ -3,26 +3,22 @@
     時間計算量 O(1)
 
     Usage:
-        二つの円の座標・半径を引数に与える
+        二つの円を引数に与える
 
     Verified:
         AOJ0023 Circles Intersection
-
-    *** 要改善 ***
-    誤差を考慮していない
 */
 
-int intersect_circle(double xa, double ya, double ra, double xb, double yb,
-                     double rb) {
-    double dsq = (xb - xa) * (xb - xa) + (yb - ya) * (yb - ya);
-    double rs = (ra + rb) * (ra + rb);
-    double rd = (ra - rb) * (ra - rb);
-    if (dsq > rs) // 衝突していない
+int intersectCC(Circle a, Circle b) {
+    double dsq = norm(a.p - b.p);
+    double rs = (a.r + b.r) * (a.r + b.r);
+    double rd = (a.r - b.r) * (a.r - b.r);
+    if (sgn(dsq - rs) == 1) // 重なっていない
         return 0;
-    else if (dsq <= rs && dsq >= rd) // 交点をもつ
+    else if (sgn(rs - dsq) >= 0 && sgn(dsq - rd) >= 0) // 共有点をもつ
         return 1;
-    else if (ra > rb) // Aの内側にB
+    else if (sgn(a.r - b.r) == 1) // BがAの内部にある
         return 2;
-    else // Bの内側にA
+    else // AがBの内部にある
         return -2;
 }
