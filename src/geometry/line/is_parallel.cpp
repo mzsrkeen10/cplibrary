@@ -3,7 +3,7 @@
     時間計算量 O(1)
 
     Usage:
-        4点の座標を引数に与える
+        2直線を引数に与える
 
     Verified:
         AOJ0021 Parallelism
@@ -11,8 +11,7 @@
 
 #define EPS 1.0e-10
 
-bool is_parallel(double ax, double ay, double bx, double by, double cx,
-                 double cy, double dx, double dy) {
-    double cp = (bx - ax) * (dy - cy) - (by - ay) * (dx - cx);
-    return fabs(cp) < EPS;
+bool is_parallel(Line a, Line b){
+    if(sgn(det(a.p1-a.p2, b.p1-b.p2)))return false;
+    return true;
 }
