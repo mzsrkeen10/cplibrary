@@ -13,5 +13,6 @@ src/
   └geometry/                  # 計算幾何のアルゴリズム
      ├triangle/                  # 三角形
      ├line/                      # 直線
-     └circle/                    # 円
+     ├circle/                    # 円
+     └convex/                    # 凸多角形
 ```
