@@ -3,23 +3,19 @@
     時間計算量 O(1)
 
     Usage:
-        引数に三角形の頂点の座標と判定したい点の座標を与える
+        引数に三角形の頂点と判定したい点を与える
         点及び辺上は外部として判定される
+        template.cppが必要
 
     Verified:
         AOJ0012 A Point in a Triangle
 */
 
-#define EPS 1.0e-9
-
-bool is_in_a_triangle(double ax, double ay, double bx, double by, double cx,
-                      double cy, double px, double py) {
-    double c1 = (bx - ax) * (py - ay) - (by - ay) * (px - ax);
-    double c2 = (cx - bx) * (py - by) - (cy - by) * (px - bx);
-    double c3 = (ax - cx) * (py - cy) - (ay - cy) * (px - cx);
-    if (c1 + EPS > 0 && c2 + EPS > 0 && c3 + EPS > 0)
-        return true;
-    else if (c1 + EPS < 0 && c2 + EPS < 0 && c3 + EPS < 0)
+bool is_in_a_triangle(Point a, Point b, Point c, Point p) {
+    double c1 = det(b - a, p - a);
+    double c2 = det(c - b, p - b);
+    double c3 = det(a - c, p - c);
+    if (sgn(c1) == sgn(c2) && sgn(c2) == sgn(c3) && sgn(c1) != 0)
         return true;
     else
         return false;
