@@ -1,5 +1,8 @@
 /*
     円を表す構造体
+
+    Usage:
+        template.cppが必要
 */
 
 struct Circle {
