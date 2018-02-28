@@ -4,6 +4,7 @@
 
     Usage:
         引数に3点を与える
+        template.cppが必要
 
     Verified:
         AOJ0010 Circumscribed Circle of a Triangle

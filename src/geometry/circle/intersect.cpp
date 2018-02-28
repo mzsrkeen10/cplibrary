@@ -4,6 +4,7 @@
 
     Usage:
         二つの円を引数に与える
+        template.cppが必要
 
     Verified:
         AOJ0023 Circles Intersection

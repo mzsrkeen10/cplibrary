@@ -49,6 +49,7 @@
 
     Usage:
         引数に3点を与える
+        template.cppが必要
 
     Verified:
         AOJ CGL_1_C Counter-Clockwise

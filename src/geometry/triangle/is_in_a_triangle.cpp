@@ -5,6 +5,7 @@
     Usage:
         引数に三角形の頂点と判定したい点を与える
         点及び辺上は外部として判定される
+        template.cppが必要
 
     Verified:
         AOJ0012 A Point in a Triangle

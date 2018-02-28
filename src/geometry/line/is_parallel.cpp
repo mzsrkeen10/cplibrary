@@ -4,12 +4,11 @@
 
     Usage:
         2直線を引数に与える
+        template.cppが必要
 
     Verified:
         AOJ0021 Parallelism
 */
-
-#define EPS 1.0e-10
 
 bool is_parallel(Line a, Line b) {
     if (sgn(det(a.p1 - a.p2, b.p1 - b.p2)))
