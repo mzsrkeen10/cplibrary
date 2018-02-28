@@ -11,7 +11,8 @@
 
 #define EPS 1.0e-10
 
-bool is_parallel(Line a, Line b){
-    if(sgn(det(a.p1-a.p2, b.p1-b.p2)))return false;
+bool is_parallel(Line a, Line b) {
+    if (sgn(det(a.p1 - a.p2, b.p1 - b.p2)))
+        return false;
     return true;
 }
