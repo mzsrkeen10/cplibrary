@@ -21,11 +21,13 @@ inline int sgn(const double &a) { return (a < -EPS ? -1 : (a > EPS ? 1 : 0)); }
 
 inline bool eq(const Point &a, const Point &b) { return abs(a - b) < EPS; }
 
+namespace std {
 inline bool operator<(const Point &a, const Point &b) {
     if (sgn(a.real() - b.real()))
-        sgn(a.real() - b.real()) < 0;
-    return sgn(a.imag() - b.imag());
+        return sgn(a.real() - b.real()) < 0;
+    return sgn(a.imag() - b.imag()) < 0;
 }
+} // namespace std
 
 double dot(const Point &a, const Point &b) { return real(conj(a) * b); }
 
