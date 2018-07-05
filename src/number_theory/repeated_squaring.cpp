@@ -4,14 +4,17 @@
 
     Usage:
         引数にx,nを与えるとx^n % MODを返す
+
+    Verified:
+        AOJ NTL_1_B Power
 */
 
-#define MOD 1000000007
+using i64 = long long int;
 
-typedef long long ll;
+const i64 MOD = 1000000007;
 
-ll repeated_squaring(ll x, ll n) {
-    ll res = 1;
+i64 repeated_squaring(i64 x, i64 n) {
+    i64 res = 1;
     while (n > 0) {
         if (n & 1)
             res = res * x % MOD;

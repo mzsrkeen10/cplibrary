@@ -7,8 +7,10 @@
         n == 1 の場合は例外
 */
 
-bool is_prime(long long int n) {
-    for (long long int i = 2; i * i <= n; i++) {
+using i64 = long long int;
+
+bool is_prime(i64 n) {
+    for (i64 i = 2; i * i <= n; i++) {
         if (n % i == 0)
             return false;
     }

@@ -3,6 +3,9 @@
     時間計算量 O(α(n))
 
     集合の併合と所属判定を高速に行うことが可能
+
+    Verified:
+        AOJ DSL_1_A Disjoint Set: Union Find Tree
 */
 
 #include <vector>

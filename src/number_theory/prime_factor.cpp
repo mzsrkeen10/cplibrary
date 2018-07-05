@@ -4,13 +4,18 @@
 
     Usage:
         入力nは正
+
+    Verified:
+        AOJ NTL_1_A Prime Factorize
 */
 
 #include <map>
 
-std::map<long long int, long long int> prime_factor(long long int n) {
-    std::map<long long int, long long int> res;
-    for (long long int i = 2; i * i <= n; i++) {
+using i64 = long long int;
+
+std::map<i64, i64> prime_factor(i64 n) {
+    std::map<i64, i64> res;
+    for (i64 i = 2; i * i <= n; i++) {
         while (n % i == 0) {
             res[i]++;
             n /= i;

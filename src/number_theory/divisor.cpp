@@ -8,9 +8,11 @@
 
 #include <vector>
 
-std::vector<long long int> divisor(long long int n) {
-    std::vector<long long int> res;
-    for (long long int i = 1; i * i <= n; i++) {
+using i64 = long long int;
+
+std::vector<i64> divisor(i64 n) {
+    std::vector<i64> res;
+    for (i64 i = 1; i * i <= n; i++) {
         if (n % i == 0) {
             res.push_back(i);
             if (i != n / i)

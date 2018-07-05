@@ -14,8 +14,8 @@
 #include <utility>
 
 class ConvexHullTrick {
-    using ll = long long int;
-    using Line = std::pair<ll, ll>;
+    using i64 = long long int;
+    using Line = std::pair<i64, i64>;
 
   private:
     std::deque<Line> lines;
@@ -26,7 +26,7 @@ class ConvexHullTrick {
                (b.second - a.second) * (c.first - b.first);
     }
 
-    void add(ll a, ll b) {
+    void add(i64 a, i64 b) {
         Line line = make_pair(a, b);
         while (lines.size() >= 2 &&
                check(lines[lines.size() - 2], lines.back(), line))
@@ -34,9 +34,9 @@ class ConvexHullTrick {
         lines.push_back(line);
     }
 
-    ll f(ll i, ll x) { return lines[i].first * x + lines[i].second; }
+    i64 f(i64 i, i64 x) { return lines[i].first * x + lines[i].second; }
 
-    ll get(ll x) {
+    i64 get(i64 x) {
         assert(lines.size());
         while (lines.size() >= 2 && f(0, x) >= f(1, x)) {
             lines.pop_front();
