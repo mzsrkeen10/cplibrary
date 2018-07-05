@@ -10,6 +10,7 @@ root/
       ├graph/             # グラフ
       ├data_structure/        # データ構造
       ├numerical_calculation/ # 数値計算
-      ├number_theory/     # 整数問題
-      └geometry/          # 計算幾何
+      ├number_theory/       # 整数問題
+      ├dynamic_programming  # 動的計画法
+      └geometry/            # 計算幾何
 ```
