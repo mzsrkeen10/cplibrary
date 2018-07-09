@@ -10,7 +10,7 @@
 using i64 = long long int;
 
 // a : 元, md : 法
-i64 multi_inv(i64 md, i64 a) {
+i64 multi_inv(i64 a, i64 md) {
     i64 x, y;
     extgcd(md, a, x, y);
     return (y > 0 ? y : md + y);
