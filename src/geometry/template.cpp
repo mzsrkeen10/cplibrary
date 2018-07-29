@@ -48,3 +48,13 @@ struct Line {
                (eq(p1, rhs.p2) && eq(p2, rhs.p1));
     }
 };
+
+inline Point curr(const Polygon &p, const int &i) { return p[i % p.size()]; }
+
+inline Point next(const Polygon &p, const int &i) {
+    return p[(i + 1) % p.size()];
+}
+
+inline Point prev(const Polygon &p, const int &i) {
+    return p[(i + p.size() - 1) % p.size()];
+}
