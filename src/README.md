@@ -15,5 +15,6 @@ src/
      ├triangle/                  # 三角形
      ├line/                      # 直線
      ├circle/                    # 円
+     ├polygon/                   # 多角形
      └convex/                    # 凸多角形
 ```
