@@ -11,7 +11,7 @@
         AOJ CGL_3_A Area
 */
 
-double get_area(Polygon &poly) {
+double compute_area(Polygon &poly) {
     double res = 0;
     for (int i = 0; i < poly.size(); i++) {
         res += det(poly[i], poly[(i + 1) % poly.size()]);
