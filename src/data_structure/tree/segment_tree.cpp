@@ -14,6 +14,7 @@
     Verified:
         AOJ DSL_2_A Range Minimum Query (RMQ)
         AOJ DSL_2_B Range Sum Query
+        ABC 125 C GCD on Blackboard
 */
 
 template <typename T, typename E> class SegmentTree {
