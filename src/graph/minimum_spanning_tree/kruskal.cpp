@@ -4,8 +4,7 @@
 
     Usage:
         ***UnionFindTreeクラスが必要***
-        vector<Edge> esに辺を格納
-        V,Eに頂点数,辺数を格納
+        引数に頂点数,辺の列を与える
 
         非連結なグラフに適用した場合,
         「各連結成分における最小全域木」の集合を求められる
@@ -21,14 +20,11 @@ struct Edge {
     int u, v, cost;
 };
 
-bool comp(const Edge &e1, const Edge &e2) { return e1.cost < e2.cost; }
-
-vector<Edge> es;
-int V, E; // 頂点数と辺数
-
-int kruskal() {
-    std::sort(es.begin(), es.end(), comp); // Edge.costが小さい順にソートする
-    UnionFindTree uft = UnionFindTree(V); // Union-Findの初期化
+int kruskal(int v, vector<Edge> &es) {
+    std::sort(es.begin(), es.end(), [](const Edge &e1, const Edge &e2) {
+        return e1.cost < e2.cost;
+    }); // Edge.costが小さい順にソートする
+    UnionFindTree uft = UnionFindTree(v); // Union-Findの初期化
     int res = 0;
     for (auto e : es) {
         if (!uft.same(e.u, e.v)) {
