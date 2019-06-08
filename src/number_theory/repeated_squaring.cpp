@@ -9,9 +9,9 @@
         AOJ NTL_1_B Power
 */
 
-using i64 = long long int;
+using i64 = int64_t;
 
-const i64 MOD = 1000000007;
+constexpr i64 MOD = 1000000007;
 
 i64 repeated_squaring(i64 x, i64 n) {
     i64 res = 1;

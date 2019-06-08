@@ -11,7 +11,7 @@
 
 #include <map>
 
-using i64 = long long int;
+using i64 = int64_t;
 
 std::map<i64, i64> prime_factor(i64 n) {
     std::map<i64, i64> res;

@@ -18,7 +18,7 @@
 
 #include <vector>
 
-using i64 = long long int;
+using i64 = int64_t;
 
 i64 mod(i64 a, i64 m) { return (a % m + m) % m; }
 

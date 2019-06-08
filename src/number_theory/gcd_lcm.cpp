@@ -6,7 +6,7 @@
         AOJ NTL_1_C Least Common Multiple
 */
 
-using i64 = long long int;
+using i64 = int64_t;
 
 i64 gcd(i64 m, i64 n) {
     return (n == 0 ? m : gcd(n, m % n));

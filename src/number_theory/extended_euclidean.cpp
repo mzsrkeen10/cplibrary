@@ -11,7 +11,7 @@
         AOJ NTL_1_E Extended Euclid Algorithm
 */
 
-using i64 = long long int;
+using i64 = int64_t;
 
 i64 extgcd(i64 a, i64 b, i64 &x, i64 &y) {
     i64 d = a;

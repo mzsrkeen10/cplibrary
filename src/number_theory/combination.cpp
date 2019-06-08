@@ -8,10 +8,10 @@
         *** extgcd, multi_invが必要 ***
 */
 
-#define MAX_N 10000
-#define MOD 1000000007
+using i64 = int64_t;
 
-using i64 = long long int;
+constexpr i64 MAX_N = 10000;
+constexpr i64 MOD = 1000000007;
 
 i64 ncr[MAX_N];
 

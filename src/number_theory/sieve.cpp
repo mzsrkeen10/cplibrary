@@ -10,9 +10,9 @@
         is_prime[]には各値が素数か否かが記憶される
 */
 
-#define MAX_N 10000
+using i64 = int64_t;
 
-using i64 = long long int;
+constexpr i64 MAX_N = 10000;
 
 i64 prime[MAX_N]; // i番目の素数
 bool is_prime[MAX_N + 1];   // is_prime[i]がtrueならばiは素数

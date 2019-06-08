@@ -8,7 +8,7 @@
 
 #include <vector>
 
-using i64 = long long int;
+using i64 = int64_t;
 
 std::vector<i64> divisor(i64 n) {
     std::vector<i64> res;

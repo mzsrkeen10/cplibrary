@@ -7,7 +7,7 @@
         n == 1 の場合は例外
 */
 
-using i64 = long long int;
+using i64 = int64_t;
 
 bool is_prime(i64 n) {
     for (i64 i = 2; i * i <= n; i++) {
