@@ -8,7 +8,7 @@
         size: セグメント木に乗せる列の大きさ
         query_func: 取得用の関数
         update_func: 更新用の関数
-        identity: 更新用の単位元
+        identity: 取得用の単位元
         v: 列の初期値指定用
 
     Verified:
