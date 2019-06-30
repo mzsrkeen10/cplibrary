@@ -3,6 +3,7 @@ src/
   ├graph/                     # グラフに関するアルゴリズム
   │  ├shortest_path/             # 最短経路
   │  ├minimum_spanning_tree/     # 最小全域木
+  │  ├minimum_spanning_arborescence/ # 最小全域有向木
   │  └flow/                      # フロー
   ├data_structure/            # データ構造
   │  └tree/                   # 木構造
