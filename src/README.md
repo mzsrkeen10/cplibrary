@@ -12,6 +12,7 @@ src/
   │  └differential_and_integral/ # 数値微積分
   ├number_theory/             # 整数問題のアルゴリズム
   ├dynamic_programming/       # 動的計画法
+  ├exhaustive_search/         # 全探索/全列挙
   └geometry/                  # 計算幾何のアルゴリズム
      ├triangle/                  # 三角形
      ├line/                      # 直線
