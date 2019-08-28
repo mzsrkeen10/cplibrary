@@ -2,67 +2,42 @@
     単一始点最短経路(Bellman-Ford法)
     時間計算量 O(|V||E|)
 
-    MAX_E : 辺数の最大値
-    MAX_V : 頂点数の最大値
-
     Usage:
+        v : 頂点数
+        e : 辺数
         s : 始点
-        edge es[MAX_E]に辺を格納
-        V, Eに頂点数, 辺数を格納
-        最短経路はd[MAX_V]に格納される
-        find_negative_loop()で負閉路を検出可
+        mini : 最短距離を格納するvector（あらかじめ初期化しておく）
+        edges : 辺
+        始点から到達可能な負閉路が存在する場合はfalseを，それ以外はtrueを返す
+
+    Verified:
+        AOJ GRL_1_B Single Source Shortest Path (Negative Edges)
 */
 
 #include <cstring>
 
-#define MAX_E 10000
-#define MAX_V 10000
-#define INF 1e9
+using i64 = int64_t;
 
-// 頂点fromから頂点toへのコストcostの辺
-struct edge {
-    int from, to, cost;
+constexpr int INF = 1e9;
+
+struct Edge {
+    int from, to;
+    i64 cost;
 };
 
-edge es[MAX_E]; // 辺
-
-int d[MAX_V]; // 最短距離
-int V, E;     // Vは頂点数、Eは辺数
-
-// s番目の頂点から各頂点への最短距離を求める
-void shortest_path(int s) {
-    for (int i = 0; i < V; i++)
-        d[i] = INF;
-    d[s] = 0;
-    while (true) {
+bool bellman_ford(int v, int e, int s, vector<i64> &mini, const vector<Edge> &edges) {
+    for(int i = 0; i < 2*v; i++) {
         bool update = false;
-        for (int i = 0; i < E; i++) {
-            edge e = es[i];
-            if (d[e.from] != INF && d[e.to] > d[e.from] + e.cost) {
-                d[e.to] = d[e.from] + e.cost;
+        for (auto e: edges) {
+            if (mini[e.from] != INF && mini[e.to] > mini[e.from] + e.cost) {
+                mini[e.to] = mini[e.from] + e.cost;
                 update = true;
             }
         }
         if (!update)
             break;
+        else if(i >= 2*v - 1)
+            return false;
     }
-}
-
-// trueなら負の閉路が存在する
-bool find_negative_loop() {
-    memset(d, 0, sizeof(d));
-
-    for (int i = 0; i < V; i++) {
-        for (int j = 0; j < E; j++) {
-            edge e = es[j];
-            if (d[e.to] > d[e.from] + e.cost) {
-                d[e.to] = d[e.from] + e.cost;
-
-                // n回目にも更新があるなら負の閉路が存在する
-                if (i == V - 1)
-                    return true;
-            }
-        }
-    }
-    return false;
+    return true;
 }
