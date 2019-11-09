@@ -15,6 +15,7 @@
         AOJ DSL_2_A Range Minimum Query (RMQ)
         AOJ DSL_2_B Range Sum Query
         ABC 125 C GCD on Blackboard
+        NIKKEI 2019 2 qual D Shortest Path on a Line
 */
 
 template <typename T, typename E> class SegmentTree {
@@ -67,8 +68,8 @@ template <typename T, typename E> class SegmentTree {
         if (a <= l && r <= b)
             return node[k];
 
-        int vl = query(a, b, 2 * k + 1, l, (l + r) / 2);
-        int vr = query(a, b, 2 * k + 2, (l + r) / 2, r);
+        T vl = query(a, b, 2 * k + 1, l, (l + r) / 2);
+        T vr = query(a, b, 2 * k + 2, (l + r) / 2, r);
         return query_func(vl, vr);
     }
 };
