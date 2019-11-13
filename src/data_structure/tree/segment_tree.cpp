@@ -18,20 +18,23 @@
         NIKKEI 2019 2 qual D Shortest Path on a Line
 */
 
+#include <functional>
+#include <vector>
+
 template <typename T, typename E> class SegmentTree {
   private:
     int n;
-    vector<T> node;
-    const function<T(T, T)> query_func;
-    const function<T(T, E)> update_func;
+    std::vector<T> node;
+    const std::function<T(T, T)> query_func;
+    const std::function<T(T, E)> update_func;
     const T identity;
 
   public:
     SegmentTree() = default;
 
-    SegmentTree(int size, function<T(T, T)> query_func,
-                function<T(T, E)> update_func, T identity,
-                vector<T> v = vector<T>())
+    SegmentTree(int size, std::function<T(T, T)> query_func,
+                std::function<T(T, E)> update_func, T identity,
+                std::vector<T> v = std::vector<T>())
         : query_func(query_func), update_func(update_func), identity(identity) {
         n = 1;
         while (n < size)
@@ -41,7 +44,7 @@ template <typename T, typename E> class SegmentTree {
             build(size, v);
     }
 
-    void build(int size, vector<T> v) {
+    void build(int size, std::vector<T> v) {
         for (int i = 0; i < size; ++i)
             node[i + n - 1] = v[i];
         for (int i = n - 2; i >= 0; --i)

@@ -16,25 +16,29 @@
         AOJ ALDS1_4_C Dictionary (add,countのみ)
 */
 
+#include <functional>
+#include <string>
+#include <vector>
+
 class Trie {
   private:
     struct TrieNode {
-        vector<int> next;
-        vector<int> accept;
+        std::vector<int> next;
+        std::vector<int> accept;
         int num_string;
         TrieNode(int num_edge) : num_string(0), next(num_edge, -1) {}
     };
 
     int num_edge;
     int margin;
-    vector<TrieNode> nodes;
+    std::vector<TrieNode> nodes;
 
   public:
     Trie(int num_edge, int margin) : num_edge(num_edge), margin(margin) {
         nodes.push_back(TrieNode(num_edge));
     }
 
-    void add(const string &str, int str_id, int str_index = 0,
+    void add(const std::string &str, int str_id, int str_index = 0,
              int node_index = 0) {
         if (str_index == str.size()) {
             nodes[node_index].accept.push_back(str_id);
@@ -49,9 +53,9 @@ class Trie {
         }
     }
 
-    void add(const string &str) { add(str, nodes[0].num_string); }
+    void add(const std::string &str) { add(str, nodes[0].num_string); }
 
-    void query(const string &str, const function<void(int)> &f,
+    void query(const std::string &str, const std::function<void(int)> &f,
                int str_index = 0, int node_index = 0) {
         for (auto &index : nodes[node_index].accept)
             f(index);

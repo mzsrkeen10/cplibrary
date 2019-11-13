@@ -22,8 +22,8 @@ using i64 = int64_t;
 
 i64 mod(i64 a, i64 m) { return (a % m + m) % m; }
 
-pair<i64, i64> chinese_remainder_theorem(const vector<i64> &a,
-                                         const vector<i64> &m) {
+pair<i64, i64> chinese_remainder_theorem(const std::vector<i64> &a,
+                                         const std::vector<i64> &m) {
     i64 x = 0, md = 1;
     for (int i = 0; i < (int)a.size(); ++i) {
         i64 p, q;

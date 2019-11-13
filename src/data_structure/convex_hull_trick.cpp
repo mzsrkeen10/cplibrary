@@ -14,7 +14,7 @@
 #include <utility>
 
 class ConvexHullTrick {
-    using i64 = long long int;
+    using i64 = int64_t;
     using Line = std::pair<i64, i64>;
 
   private:

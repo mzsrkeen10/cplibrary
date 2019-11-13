@@ -11,15 +11,18 @@
         AOJ GRL_3_C Strongly Connected Components
 */
 
-using Graph = vector<vector<int>>;
+#include <deque>
+#include <vector>
+
+using Graph = std::vector<std::vector<int>>;
 
 class StronglyConnectedComponents {
   private:
     const Graph &graph;
     Graph g, rg;
-    deque<int> order;
-    deque<bool> used;
-    vector<int> num_components;
+    std::deque<int> order;
+    std::deque<bool> used;
+    std::vector<int> num_components;
 
     void dfs(int v) {
         used[v] = true;

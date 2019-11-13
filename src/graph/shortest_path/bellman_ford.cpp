@@ -15,6 +15,7 @@
 */
 
 #include <cstring>
+#include <vector>
 
 using i64 = int64_t;
 
@@ -25,7 +26,7 @@ struct Edge {
     i64 cost;
 };
 
-bool bellman_ford(int v, int e, int s, vector<i64> &mini, const vector<Edge> &edges) {
+bool bellman_ford(int v, int e, int s, std::vector<i64> &mini, const std::vector<Edge> &edges) {
     for(int i = 0; i < 2*v; i++) {
         bool update = false;
         for (auto e: edges) {

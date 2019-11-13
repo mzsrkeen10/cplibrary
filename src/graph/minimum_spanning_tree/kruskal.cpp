@@ -20,7 +20,7 @@ struct Edge {
     int u, v, cost;
 };
 
-int kruskal(int v, vector<Edge> &es) {
+int kruskal(int v, std::vector<Edge> &es) {
     std::sort(es.begin(), es.end(), [](const Edge &e1, const Edge &e2) {
         return e1.cost < e2.cost;
     }); // Edge.costが小さい順にソートする

@@ -18,7 +18,7 @@
 class BIT {
   private:
     int n;
-    vector<int> bit;
+    std::vector<int> bit;
 
   public:
     BIT(int n) : n(n) {

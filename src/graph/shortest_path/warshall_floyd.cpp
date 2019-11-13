@@ -9,8 +9,8 @@
         Vに頂点数を格納
 */
 
-#define MAX_V 10000
-#define INF 1e9
+constexpr int MAX_V = 10000;
+constexpr int INF = 1e9;
 
 // d[u][v]は辺e=(u,v)のコスト(存在しない場合はINF、ただしd[i][i]=0とする)
 int d[MAX_V][MAX_V];

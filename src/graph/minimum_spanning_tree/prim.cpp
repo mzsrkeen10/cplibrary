@@ -11,12 +11,14 @@
 */
 
 #include <algorithm>
+#include <functional>
 #include <queue>
+#include <utility>
 
 #define MAX_V 10000
 #define INF 1e9
 
-typedef pair<int, int> pii; // <cost, to>
+typedef std::pair<int, int> pii; // <cost, to>
 
 int cost[MAX_V][MAX_V]; // cost[u][v]は辺e=(u,v)のコスト(存在しない場合はINF)
 bool used[MAX_V]; // 頂点iがXに含まれているか
@@ -26,7 +28,7 @@ int prim() {
     for (int i = 0; i < V; ++i) {
         used[i] = false;
     }
-    std::priority_queue<pii, vector<pii>, greater<pii>> que;
+    std::priority_queue<pii, std::vector<pii>, std::greater<pii>> que;
     que.push(pii(0, 0));
     int res = 0;
 

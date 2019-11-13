@@ -14,13 +14,18 @@
         AOJ ALDS1_14_B String Search
 */
 
+#include <string>
+#include <vector>
+
 class KMP {
   private:
-    string pattern;
-    vector<int> table;
+    std::string pattern;
+    std::vector<int> table;
 
   public:
-    KMP(string pattern) : pattern(pattern) { table.resize(pattern.size() + 1); }
+    KMP(std::string pattern) : pattern(pattern) {
+        table.resize(pattern.size() + 1);
+    }
 
     void build() {
         int m = pattern.size();
@@ -36,9 +41,9 @@ class KMP {
         }
     }
 
-    vector<int> search(const string &text) {
+    std::vector<int> search(const std::string &text) {
         int n = text.size(), m = pattern.size();
-        vector<int> res;
+        std::vector<int> res;
         for (int i = 0, j = 0; j < n;) {
             while (i > -1 && pattern[i] != text[j])
                 i = table[i];

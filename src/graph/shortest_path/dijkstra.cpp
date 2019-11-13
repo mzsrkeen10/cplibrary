@@ -11,15 +11,17 @@
         最短経路はd[MAX_V]に格納される
 */
 #include <algorithm>
+#include <functional>
 #include <queue>
+#include <utility>
 
-#define MAX_V 10000
-#define INF 1e9
+constexpr int MAX_V = 10000;
+constexpr int INF = 1e9;
 
 struct edge {
     int to, cost;
 };
-typedef pair<int, int> P; // firstは最短距離、secondは頂点の番号
+using P = std::pair<int, int>; // firstは最短距離、secondは頂点の番号
 
 int V;
 std::vector<edge> G[MAX_V];

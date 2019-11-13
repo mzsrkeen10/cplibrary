@@ -12,8 +12,12 @@
         AtCoder dwacon2018-prelims-C Kill/Death
 */
 
-vector<vector<i64>> set_part(int n, int m) {
-    vector<vector<i64>> res(m + 1, vector<i64>(n + 1, 0));
+#include <vector>
+
+using i64 = int64_t;
+
+std::vector<std::vector<i64>> set_part(int n, int m) {
+    std::vector<std::vector<i64>> res(m + 1, std::vector<i64>(n + 1, 0));
     res[0][0] = 1;
     for (int i = 1; i <= m; ++i) {
         for (int j = 0; j <= n; ++j) {

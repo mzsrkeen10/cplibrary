@@ -21,7 +21,7 @@ struct Edge {
     Weight weight;
 };
 
-using Graph = vector<vector<Edge>>;
+using Graph = std::vector<std::vector<Edge>>;
 
 constexpr Weight INF = 1e9;
 
@@ -29,7 +29,7 @@ Graph chu_liu_edmonds(const Graph &graph, const int root) {
     const int n = graph.size();
 
     // 頂点vに入る重み最小の辺でグラフを構築
-    vector<Weight> min_weight(n, INF), prev(n, -1);
+    std::vector<Weight> min_weight(n, INF), prev(n, -1);
     for (int v = 0; v < n; v++) {
         for (auto &e : graph[v]) {
             if (e.weight < min_weight[e.to]) {
@@ -41,7 +41,7 @@ Graph chu_liu_edmonds(const Graph &graph, const int root) {
 
     // 閉路の検出
     int cycle = -1;
-    vector<int> groups(n), used(n, -1);
+    std::vector<int> groups(n), used(n, -1);
     iota(groups.begin(), groups.end(), 0);
     for (int v = 0; v < n; v++) {
         if (used[v] != -1 || prev[v] == -1 || v == root)
@@ -71,8 +71,8 @@ Graph chu_liu_edmonds(const Graph &graph, const int root) {
         }
     } else { // 閉路あり
         Graph g(n);
-        using E = tuple<int, int, Weight>;
-        map<E, Edge> mp;
+        using E = std::tuple<int, int, Weight>;
+        std::map<E, Edge> mp;
         for (int v = 0; v < n; v++) {
             for (auto e : graph[v]) {
                 int from = groups[v], to = groups[e.to], w = e.weight;
