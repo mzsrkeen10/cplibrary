@@ -4,16 +4,17 @@
 
     Usage:
         2つの円を引数に与える
-        template.cpp, circle.cppが必要
+        template.cpp, circle.cpp, intersect.cppが必要
 
     Verified:
         AOJ CGL_7_E Cross Points of Circles
+        ABC 157 F Yakiniku Optimization Problem
 */
 
 vector<Point> intersection(Circle c1, Circle c2) {
     double d = abs(c1.p - c2.p);
     vector<Point> res;
-    if (sgn(c1.r + c2.r - d) < 0)
+    if (intersectCC(c1, c2) != 1)
         return res;
     double rc = (d * d + c1.r * c1.r - c2.r * c2.r) / (2 * d);
     double rs = sqrt(c1.r * c1.r - rc * rc);
